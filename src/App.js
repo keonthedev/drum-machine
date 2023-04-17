@@ -105,13 +105,13 @@ function Pad({ clip, volume }) {
   };
 
   const playSound = () => {
-    const audioTag = document.getElementById(clip.keyTrigger);
     setActive(true);
-    const resetActive = () => setActive(false);
-    setTimeout(resetActive, 200);
+    const audioTag = document.getElementById(clip.keyTrigger);
     audioTag.currentTime = 0;
     audioTag.volume = volume;
     audioTag.play();
+    const resetActive = () => setActive(false);
+    setTimeout(resetActive, 200);
   };
 
   return (
